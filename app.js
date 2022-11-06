@@ -1,13 +1,18 @@
-// Problem 1
-// Create a function that takes a variable number of arguments,
-//  each argument representing the number of items in a group. 
-//  The function should return the number of permutations (combinations)
-//   of choices you would have if you selected one item from each group.
+// The insurance guy laughs, he's just kidding. He just needs an updated list. You just need one of those Rammstein Vodka bottles.
+
+// Given an object with alcoholic drinks and a number, return a string with the name of the Rammstein bottle that matches the given number.
 
 // Examples
-// combinations(2, 3) ➞ 6
-// combinations(3, 7, 4) ➞ 84
-// combinations(2, 3, 4, 5) ➞ 120
- let combinations=(...args)=> args.reduce((a,b)=>a*b,1);
- console.log(combinations(2, 3, 4, 5))
-//  all test passed 
+// { whiskey: 100, "Rammstein A": 100, "Rammstein B": 50 } ➞ "Rammstein A"
+// // number = 100
+
+// { whiskey: 100, "Rammstein A": 100, "Rammstein B": 50 } ➞ "Rammstein B"
+// // number = 50
+
+// { whiskey: 100, "Rammstein A": 100, "Rammstein D": 70, beer: 70 } ➞ "Rammstein D"
+// // number = 70
+
+const keyCorrespendKey = (obj,value)=> Object.keys(obj).find(element=>obj[element] === value  && element.includes('Rammstein'));
+
+
+console.log(keyCorrespendKey({ whiskey: 70, "Rammstein A": 100, "Rammstein D": 70, beer: 70 },70))
